@@ -69,26 +69,4 @@ def check_entitlements(entitlements: dict) -> dict:
         "com.apple.developer.applesignin": "Apple Sign-In",
     }
 
-    checked_entitlements = {}
-
-    for key, value in entitlements_mapping.items():
-        if key in entitlements:
-            entitlement_value = entitlements[key]
-            if isinstance(entitlement_value, bool):
-                checked_entitlements[value] = {"status": "active"}
-            elif isinstance(entitlement_value, list):
-                checked_entitlements[value] = {
-                    "status": "active",
-                    "details": entitlement_value
-                }
-            elif isinstance(entitlement_value, str):
-                checked_entitlements[value] = {
-                    "status": "active",
-                    "details": entitlement_value
-                }
-            else:
-                checked_entitlements[value] = {"status": "unknown"}
-        else:
-            checked_entitlements[value] = {"status": "inactive"}
-
-    return checked_entitlements
+    return {entitlements_mapping[key]: {"status": "active"} for key in entitlements if key in entitlements_mapping}
