@@ -17,7 +17,7 @@ cd mobileprovision-checker
 ## Installation
 
 ```bash
-pip3 install -r requirements.txt
+pip install --upgrade -r requirements.txt
 
 ```
 
@@ -27,6 +27,16 @@ pip3 install -r requirements.txt
 python3 main.py yourfile.mobileprovision
 
 ```
+```bash
+python3 main.py youfile.p12 password
+
+```
+
+```bash
+python3 main.py -h
+
+```
+
 
 ## License
 
