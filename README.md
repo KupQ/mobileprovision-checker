@@ -31,9 +31,14 @@ python3 main.py yourfile.mobileprovision
 python3 main.py youfile.p12 password
 
 ```
-
 ```bash
-python3 main.py -h
+python3 main.py youfile.p12 oldpass Newpass output.p12
+
+```
+
+- Help
+```bash
+python3 main.py
 
 ```
 
