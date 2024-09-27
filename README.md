@@ -33,6 +33,7 @@ python3 main.py youfile.p12 password
 ```
 ```bash
 python3 main.py youfile.p12 oldpass Newpass output.p12
+python3 main.py youfile.p12 "" Newpass output.p12
 
 ```
 
