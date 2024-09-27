@@ -28,7 +28,7 @@ def _ocsp_check_with_openssl(cert_path: str, issuer_path: str, ocsp_url: str) ->
             reason_match = re.search(r'Reason: (.+)', output)
             ocsp_status["reason"] = reason_match.group(1) if reason_match else "Reason not provided"
         elif "good" in output:
-            ocsp_status["status"] = "Good"
+            ocsp_status["status"] = "Signed"
 
         return ocsp_status
     except subprocess.CalledProcessError as e:
